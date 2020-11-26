@@ -22,7 +22,7 @@
     }
 
   dependencies {
-		implementation 'com.github.gyadministrator:GYBottomBar:3.2'
+		 implementation 'com.github.gyadministrator:TreeRecyclerView:1.0'
 	}
 
 
