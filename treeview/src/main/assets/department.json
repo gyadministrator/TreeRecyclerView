@@ -1,0 +1,232 @@
+{
+    "deptName": "组织结构",
+    "children": [
+        {
+            "deptName": "公开司",
+            "children": [
+                {
+                    "deptName": "公开司营运部",
+                    "children": [
+                        {
+                            "deptName": "铜仁中心",
+                            "children": [
+                                {
+                                    "deptName": "铜仁服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 18
+                                        },
+                                        {
+                                            "deptName": "治安部",
+                                            "id": 19
+                                        },
+                                        {
+                                            "deptName": "测试部1",
+                                            "id": 65
+                                        }
+                                    ],
+                                    "id": 5
+                                },
+                                {
+                                    "deptName": "服务区1号",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 62
+                                        }
+                                    ],
+                                    "id": 9
+                                },
+                                {
+                                    "deptName": "A停车区",
+                                    "id": 39
+                                }
+                            ],
+                            "id": 2
+                        },
+                        {
+                            "deptName": "遵义中心",
+                            "children": [
+                                {
+                                    "deptName": "虾子服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 13
+                                        },
+                                        {
+                                            "deptName": "测试",
+                                            "id": 59
+                                        },
+                                        {
+                                            "deptName": "管理部",
+                                            "id": 15
+                                        },
+                                        {
+                                            "deptName": "餐饮部",
+                                            "id": 16
+                                        },
+                                        {
+                                            "deptName": "加油站部",
+                                            "id": 17
+                                        },
+                                        {
+                                            "deptName": "商超部门",
+                                            "id": 21
+                                        },
+                                        {
+                                            "deptName": "特产销售部",
+                                            "id": 14
+                                        }
+                                    ],
+                                    "id": 4
+                                },
+                                {
+                                    "deptName": "AA服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保安部",
+                                            "id": 61
+                                        }
+                                    ],
+                                    "id": 48
+                                },
+                                {
+                                    "deptName": "服务区2号",
+                                    "id": 11
+                                }
+                            ],
+                            "id": 3
+                        },
+                        {
+                            "deptName": "兴义中心",
+                            "children": [
+                                {
+                                    "deptName": "长耳营服务区",
+                                    "id": 52
+                                }
+                            ],
+                            "id": 50
+                        }
+                    ],
+                    "id": 1
+                },
+                {
+                    "deptName": "亨达总公司",
+                    "children": [
+                        {
+                            "deptName": "黔南事业部",
+                            "children": [
+                                {
+                                    "deptName": "铜仁服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 18
+                                        },
+                                        {
+                                            "deptName": "治安部",
+                                            "id": 19
+                                        },
+                                        {
+                                            "deptName": "测试部1",
+                                            "id": 65
+                                        }
+                                    ],
+                                    "id": 5
+                                },
+                                {
+                                    "deptName": "服务区1号",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 62
+                                        }
+                                    ],
+                                    "id": 9
+                                },
+                                {
+                                    "deptName": "B停车区",
+                                    "id": 40
+                                },
+                                {
+                                    "deptName": "A停车区",
+                                    "id": 39
+                                }
+                            ],
+                            "id": 8
+                        },
+                        {
+                            "deptName": "黔北事业部",
+                            "children": [
+                                {
+                                    "deptName": "虾子服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保洁部",
+                                            "id": 13
+                                        },
+                                        {
+                                            "deptName": "测试",
+                                            "id": 59
+                                        },
+                                        {
+                                            "deptName": "管理部",
+                                            "id": 15
+                                        },
+                                        {
+                                            "deptName": "餐饮部",
+                                            "id": 16
+                                        },
+                                        {
+                                            "deptName": "加油站部",
+                                            "id": 17
+                                        },
+                                        {
+                                            "deptName": "商超部门",
+                                            "id": 21
+                                        },
+                                        {
+                                            "deptName": "特产销售部",
+                                            "id": 14
+                                        }
+                                    ],
+                                    "id": 4
+                                },
+                                {
+                                    "deptName": "AA服务区",
+                                    "children": [
+                                        {
+                                            "deptName": "保安部",
+                                            "id": 61
+                                        }
+                                    ],
+                                    "id": 48
+                                },
+                                {
+                                    "deptName": "服务区2号",
+                                    "id": 11
+                                }
+                            ],
+                            "id": 10
+                        },
+                        {
+                            "deptName": "黔西南事业部",
+                            "children": [
+                                {
+                                    "deptName": "长耳营服务区",
+                                    "id": 52
+                                }
+                            ],
+                            "id": 51
+                        }
+                    ],
+                    "id": 7
+                }
+            ],
+            "id": 6
+        }
+    ],
+    "id": -1
+}
