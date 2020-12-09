@@ -2,9 +2,12 @@ package com.android.custom.tree.treeview.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -100,7 +103,8 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
         try {
             JSONArray jsonArray = new JSONArray(children);
             if (jsonArray.length() > 0) {
-                holder.ivRight.setVisibility(GONE);
+                //是否可以选中
+                //holder.ivRight.setVisibility(GONE);
                 childView = (RecyclerView) LayoutInflater.from(context).inflate(R.layout.common_recyclerview, null);
                 List<TreeEntity> allValues = new ArrayList<>();
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -128,7 +132,21 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
             e.printStackTrace();
         }
 
-        holder.ivRight.setOnClickListener(new View.OnClickListener() {
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.checkBox.isChecked()){
+                    treeEntity.setCheck(true);
+                    SelectItemEvent selectItemEvent = new SelectItemEvent();
+                    selectItemEvent.treeEntity = treeEntity;
+                    EventBus.getDefault().postSticky(selectItemEvent);
+                }else {
+                    treeEntity.setCheck(false);
+                }
+            }
+        });
+
+        /*holder.ivRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (holder.ivRight.getTag() == null) {
@@ -147,7 +165,7 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
                 //positionEvent.position = position;
                 //EventBus.getDefault().postSticky(positionEvent);
             }
-        });
+        });*/
         final RecyclerView finalChildView = (RecyclerView) holder.item.getTag();
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +181,21 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
                 }
             }
         });
+        SharedPreferences tree = context.getSharedPreferences("tree", Context.MODE_PRIVATE);
+        String isFirst = tree.getString("isFirst", "");
+        if (TextUtils.isEmpty(isFirst)) {
+            holder.item.performClick();
+        }
+        SharedPreferences.Editor edit = tree.edit();
+        edit.putString("isFirst", "isFirst");
+        edit.apply();
+    }
+
+    public void onDestory() {
+        SharedPreferences tree = context.getSharedPreferences("tree", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = tree.edit();
+        edit.putString("isFirst", "");
+        edit.apply();
     }
 
     @Override
@@ -176,6 +209,7 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
         ImageView ivRight;
         View item;
         LinearLayout llContent;
+        CheckBox checkBox;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -184,6 +218,7 @@ public class TreeAdapter extends RecyclerView.Adapter<TreeAdapter.ViewHolder> {
             tvTitle = itemView.findViewById(R.id.tv_title);
             ivRight = itemView.findViewById(R.id.iv_right);
             llContent = itemView.findViewById(R.id.ll_content);
+            checkBox = itemView.findViewById(R.id.item_check_box);
         }
     }
 }

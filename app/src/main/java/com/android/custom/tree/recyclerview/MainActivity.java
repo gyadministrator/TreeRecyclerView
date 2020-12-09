@@ -23,6 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
+    private TreeAdapter treeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
+        treeAdapter.onDestory();
     }
 
     private void initData() {
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             TreeEntity treeEntity = new TreeEntity(jsonObject.getString("id"), jsonObject.getString("deptName"), false, jsonObject.getJSONArray("children").length() > 0, jsonObject.getJSONArray("children").toString());
             List<TreeEntity> allValues = new ArrayList<>();
             allValues.add(treeEntity);
-            TreeAdapter treeAdapter = new TreeAdapter(allValues, this);
+            treeAdapter = new TreeAdapter(allValues, this);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setAdapter(treeAdapter);
         } catch (JSONException e) {
